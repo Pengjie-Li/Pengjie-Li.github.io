@@ -8,12 +8,12 @@ redirect_from:
   - /about.html
 ---
 
-
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Ph.D in Particle Physics and Nuclear Physics, The University of Hong Kong, 2016-2021
+* Student trainee, Nuclear Physics, RIKEN Nishina Center, 2018-2019
+* M.S. in Particle Physics and Nuclear Physics, Peking University, 2013-2016
+* B.S. in Applied Physics, University of Electronic Science and Technology of China, 2009-2013
 
 Work experience
 ======
