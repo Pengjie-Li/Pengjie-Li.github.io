@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Peking University">
+  <rect x="1" y="1" width="70" height="70" rx="16" ry="16" fill="#1f4e79"/>
+  <text x="36" y="36" dy="0.36em" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="30"
+        fill="#ffffff" letter-spacing="0.5">PKU</text>
+</svg>
