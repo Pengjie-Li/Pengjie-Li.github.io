@@ -86,7 +86,7 @@ a:hover { text-decoration: underline; }
   max-width: 146px;
   height: auto;
   display: block;
-  margin: 20px auto 14px;
+  margin: 4px auto 14px;
   aspect-ratio: auto;
   object-fit: cover;
   border-radius: 50%;
