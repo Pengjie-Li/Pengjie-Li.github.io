@@ -267,7 +267,8 @@ a:hover { text-decoration: underline; }
   transform: scale(1.4);
   transform-origin: center;
 }
-.tl-main { display: flex; flex-direction: column; }
+.tl-main { display: flex; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 7px; }
+.tl-sep { color: var(--muted); font-weight: 400; }
 .tl-period {
   font-family: "Times New Roman", Georgia, serif;
   font-weight: 700;
