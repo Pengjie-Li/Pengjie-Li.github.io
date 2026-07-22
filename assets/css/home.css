@@ -261,6 +261,12 @@ a:hover { text-decoration: underline; }
   object-fit: contain;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
+/* UESTC logo is wide (120×82); object-fit:contain shrinks it to ~40×27,
+   so scale it up to match the height of the square/tall logos. */
+.org-logo[src*="uesta"] {
+  transform: scale(1.4);
+  transform-origin: center;
+}
 .tl-main { display: flex; flex-direction: column; }
 .tl-period {
   font-family: "Times New Roman", Georgia, serif;
