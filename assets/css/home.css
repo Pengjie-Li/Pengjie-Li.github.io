@@ -369,6 +369,29 @@ a:hover { text-decoration: underline; }
 .badge.corr { background: #eaf4f5; color: var(--teal-dark); border: 1px solid #c4e2e4; }
 .pub-links a { font-family: var(--sans); font-size: 12.5px; margin-left: 6px; }
 
+/* Clickable citation string -> jumps to DOI / arXiv.
+   Default: reads as normal citation text (coordinated with page);
+   Hover: Fudan-red + underline to signal it is clickable. */
+.cite-link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+.cite-link em { color: inherit; font-style: italic; }
+.cite-link:hover,
+.cite-link:hover em {
+  color: var(--fudan-red);
+  text-decoration: none;
+}
+.cite-link:hover { border-bottom-color: rgba(139, 31, 45, 0.45); }
+.cite-link:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* Talks */
 .talks-list { list-style: none; padding: 0; margin: 0; }
 .talks-list li {
