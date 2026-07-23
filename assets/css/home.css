@@ -261,13 +261,6 @@ a:hover { text-decoration: underline; }
   object-fit: contain;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
-/* UESTC logo is wide (120×82); object-fit:contain shrinks it to ~40×27.
-   Use negative margins so the visual box stays 40×40 while the image fills it. */
-.org-logo[src*="uesta"] {
-  width: auto; height: auto;
-  max-width: none; max-height: none;
-  min-width: 0; min-height: 0;
-}
 .tl-main { display: flex; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 7px; }
 .tl-sep { color: var(--muted); font-weight: 400; }
 .tl-period {
