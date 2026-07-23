@@ -97,13 +97,14 @@ a:hover { text-decoration: underline; }
 .profile .p-body { padding: 18px 20px 22px; }
 .profile h1 {
   margin: 0;
-  display: inline;
+  display: inline-block;
   font-size: 24px;
   font-weight: 700;
   font-family: var(--serif);
-  line-height: 1.2;
+  line-height: 1;
+  vertical-align: middle;
 }
-.profile .p-cn { display: inline; color: var(--muted); font-size: 24px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+.profile .p-cn { display: inline-block; color: var(--muted); font-size: 24px; font-weight: 700; line-height: 1; margin-left: 8px; vertical-align: middle; }
 .profile .p-role {
   margin: 12px 0 4px;
   font-size: 14.5px;
