@@ -187,6 +187,23 @@
   font-style: italic;
 }
 
+/* Bilibili link (small-TV icon) in Impact & recognition */
+.bilbili-link {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: .4em;
+  line-height: 0;
+}
+.bilbili-icon {
+  width: 1.3em;
+  height: 1.3em;
+  fill: #FB7299;
+  transition: fill .2s ease;
+}
+.bilbili-link:hover .bilbili-icon {
+  fill: #00A1D6;
+}
+
 /* ── Impact highlight box ── */
 .impact-highlight {
   margin: 28px 0 16px;
@@ -247,4 +264,132 @@
   .impact-highlight { padding: 16px; }
   .hero-cap { flex-direction: column; align-items: flex-start; }
   .narr-dropcap::first-letter { font-size: 44px; }
+}
+
+/* ===== Capability-Showcase page (10Be) ===== */
+.cap-section { margin-top: 38px; }
+.cap-section > p {
+  font-size: 15px;
+  line-height: 1.78;
+  color: #2c343d;
+  margin: 0 0 16px;
+}
+
+/* Figures (facility / SHT) — clean, full width */
+.cap-fig {
+  margin: 24px 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px;
+}
+.cap-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+.cap-fig figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.58;
+  color: #555;
+}
+.cap-fig figcaption strong { color: var(--ink); }
+
+/* Spec sheet grid */
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 18px 0 8px;
+}
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafcfc;
+}
+.spec-k {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--teal-dark);
+}
+.spec-v {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #2c343d;
+}
+
+/* Tables (collaboration / contribution / output / talks) */
+.cap-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 6px;
+  font-size: 13.5px;
+}
+.cap-table th {
+  text-align: left;
+  background: linear-gradient(180deg, #f4f8f9, #eef4f5);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+}
+.cap-table td {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  color: #34404a;
+  line-height: 1.5;
+  vertical-align: top;
+}
+.cap-table tbody tr:nth-child(even) { background: #fafcfc; }
+.cap-table strong { color: var(--ink); }
+
+/* Role callout */
+.role-callout {
+  margin: 16px 0 4px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--fudan-red);
+  background: linear-gradient(135deg, #fef9f9, #fff);
+  border-radius: 0 8px 8px 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #34404a;
+}
+.role-callout strong { color: var(--ink); }
+
+/* Lists */
+.cap-list {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+.cap-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #34404a;
+  margin-bottom: 8px;
+}
+.cap-list strong { color: var(--ink); }
+
+/* Sub-subheading (h3) */
+.cap-sub {
+  font-family: var(--serif);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin: 22px 0 4px;
+}
+
+@media (max-width: 560px) {
+  .spec-grid { grid-template-columns: 1fr; }
+  .cap-table { font-size: 12.5px; }
+  .cap-table th, .cap-table td { padding: 7px 9px; }
+  .cap-section { margin-top: 30px; }
 }
