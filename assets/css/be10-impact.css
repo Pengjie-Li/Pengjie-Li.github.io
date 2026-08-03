@@ -187,21 +187,80 @@
   font-style: italic;
 }
 
-/* Bilibili link (small-TV icon) in Impact & recognition */
-.bilbili-link {
-  display: inline-flex;
-  vertical-align: middle;
-  margin-left: .4em;
-  line-height: 0;
+/* ── Bilibili video card (Impact & recognition) ── */
+.bili-video {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 18px 0 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
 }
-.bilbili-icon {
-  width: 1.3em;
-  height: 1.3em;
-  fill: #FB7299;
-  transition: fill .2s ease;
+.bili-video:hover {
+  box-shadow: 0 6px 20px rgba(251,114,153,0.18);
+  border-color: #fbcfe0;
+  transform: translateY(-2px);
 }
-.bilbili-link:hover .bilbili-icon {
-  fill: #00A1D6;
+.bili-video-thumb {
+  position: relative;
+  flex: 0 0 168px;
+  width: 168px;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f0f3;
+}
+.bili-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bili-video-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(251,114,153,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  transition: transform .2s ease;
+}
+.bili-video:hover .bili-video-play {
+  transform: scale(1.08);
+}
+.bili-video-play svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
+.bili-video-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.bili-video-title {
+  font-family: var(--serif);
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.bili-video:hover .bili-video-title {
+  color: #FB7299;
+}
+.bili-video-sub {
+  font-size: 12.5px;
+  color: var(--muted);
 }
 
 /* ── Impact highlight box ── */
@@ -264,6 +323,8 @@
   .impact-highlight { padding: 16px; }
   .hero-cap { flex-direction: column; align-items: flex-start; }
   .narr-dropcap::first-letter { font-size: 44px; }
+  .bili-video { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .bili-video-thumb { width: 100%; flex-basis: auto; aspect-ratio: 16 / 9; }
 }
 
 /* ===== Capability-Showcase page (10Be) ===== */
