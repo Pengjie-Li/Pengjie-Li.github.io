@@ -179,6 +179,7 @@ a:hover { text-decoration: underline; }
 }
 .p-cv {
   display: block;
+  width: 100%;
   margin-top: 16px;
   text-align: center;
   background: var(--fudan-red);
@@ -187,6 +188,9 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
   padding: 9px 12px;
   border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
 }
 .p-cv:hover { background: var(--fudan-red-dark); text-decoration: none; }
 
@@ -454,6 +458,54 @@ a:hover { text-decoration: underline; }
 .talk-kind.poster { background: #f0eaf8; color: #5b3b8c; border: 1px solid #ddd0ef; }
 .talk-where { color: var(--muted); font-size: 13px; }
 
+/* News */
+.news-list { list-style: none; padding: 0; margin: 0; }
+.news-item {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px dotted var(--line);
+  font-size: 14px;
+  align-items: baseline;
+}
+.news-item:last-child { border-bottom: 0; }
+.news-item.hidden { display: none; }
+.news-date {
+  color: var(--fudan-red);
+  font-weight: 700;
+  font-family: "Times New Roman", serif;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+.news-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-family: var(--sans);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.news-tag.paper   { background: #e7f1ff; color: #1c4fa0; border: 1px solid #bcd6f5; }
+.news-tag.talk    { background: #fde8ea; color: var(--fudan-red); border: 1px solid #f3c2c8; }
+.news-tag.position { background: #eaf4f5; color: var(--teal-dark); border: 1px solid #c4e2e4; }
+.news-tag.award   { background: #fff3cd; color: #8a6d00; border: 1px solid #ffe08a; }
+.news-tag.service { background: #f0eaf8; color: #5b3b8c; border: 1px solid #ddd0ef; }
+.news-more-btn {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.news-more-btn:hover { text-decoration: underline; }
+
 /* Back to top */
 #back2top {
   position: fixed; right: 26px; bottom: 40px;
@@ -492,4 +544,98 @@ a:hover { text-decoration: underline; }
   .org-logo { width: 34px; height: 34px; }
   .talks-list { grid-template-columns: 70px 1fr; }
   .top-nav { display: none; }
+}
+
+/* ---------- Print / Save as PDF ---------- */
+@media print {
+  :root {
+    --fudan-red: #8b1f2d;
+    --teal-dark: #236a73;
+    --ink: #1f2429;
+    --muted: #5a6470;
+    --line: #d0d8de;
+  }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* hide interactive chrome */
+  .site-header, .profile, #back2top, .footer,
+  .news-more-btn, .top-nav { display: none !important; }
+
+  /* kill page background */
+  body { background: #fff; font-size: 11pt; line-height: 1.55; }
+
+  /* full-width content, no sidebar gap */
+  .layout {
+    display: block;
+    padding: 0;
+  }
+  .card {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  /* print-only CV header */
+  .print-cv-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 18pt;
+    padding-bottom: 10pt;
+    border-bottom: 2px solid var(--fudan-red);
+  }
+  .print-cv-header h1 {
+    margin: 0 0 3pt;
+    font-size: 22pt;
+    font-weight: 700;
+    font-family: "Palatino Linotype", Georgia, serif;
+  }
+  .print-cv-header p {
+    margin: 2pt 0;
+    font-size: 9.5pt;
+    color: var(--muted);
+  }
+
+  /* sections */
+  .section { padding: 10pt 0; border-bottom: 1pt solid var(--line); }
+  .section:last-child { border-bottom: 0; }
+  .section > h2 {
+    font-size: 13pt;
+    margin: 0 0 8pt;
+    border-left: 3pt solid var(--teal-dark);
+    padding-left: 8pt;
+  }
+
+  /* keep timeline compact */
+  .org-logo { width: 28px; height: 28px; }
+  .timeline li { padding: 7pt 0; }
+
+  /* project cards: flatten to simple list */
+  .research-grid { display: block; }
+  .proj-card {
+    display: block;
+    border: none;
+    border-bottom: 1pt dotted var(--line);
+    border-radius: 0;
+    padding: 5pt 0;
+    box-shadow: none;
+  }
+  .proj-card h3 { font-size: 11pt; margin: 0 0 2pt; }
+  .proj-card .pc-intro { font-size: 9.5pt; }
+  .proj-card .pc-more { display: none; }
+
+  /* publications */
+  .publication-list li { font-size: 9pt; padding: 4pt 0; }
+  .pub-year { font-size: 12pt; margin: 12pt 0 4pt; }
+
+  /* talks */
+  .talks-list li { font-size: 9pt; padding: 4pt 0; }
+
+  /* page breaks */
+  .section { page-break-inside: avoid; }
+  h2 { page-break-after: avoid; }
+  .timeline li, .publication-list li, .talks-list li { page-break-inside: avoid; }
+
+  /* show hidden news items in print */
+  .news-item.hidden { display: grid !important; }
 }

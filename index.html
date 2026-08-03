@@ -16,6 +16,7 @@
         <span class="aff">Fudan University</span>
       </a>
       <nav class="top-nav" aria-label="Navigation">
+        <a href="#news">News</a>
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#career">Career</a>
@@ -67,11 +68,62 @@
           <span>Detector &amp; DAQ</span>
         </div>
 
+        <button class="p-cv" onclick="window.print()" aria-label="Download CV as PDF">
+          ↓ Download CV (PDF)
+        </button>
+
       </div>
     </aside>
 
     <!-- ============ RIGHT CONTENT ============ -->
     <article class="card content">
+
+      <!-- PRINT-ONLY CV HEADER (hidden on screen, visible when printing) -->
+      <div class="print-cv-header" style="display:none" aria-hidden="true">
+        <h1>Pengjie Li (李朋杰)</h1>
+        <p>Engineer · Fudan University · Shanghai, China</p>
+        <p>lipengjie@fudan.edu.cn · orcid.org/0000-0001-6542-4697 · scholar.google.com (wFrSqu8AAAAJ)</p>
+      </div>
+
+      <!-- NEWS -->
+      <section id="news" class="section">
+        <h2>News</h2>
+        <ul class="news-list" id="news-list">
+          <li class="news-item">
+            <span class="news-date">2026-07</span>
+            <span><span class="news-tag paper">Paper</span>New paper published: "Dipole Strength Distribution of <sup>8</sup>He and Decay Characteristics" — <a href="https://doi.org/10.1103/PhysRevLett.136.172501" target="_blank" rel="noopener"><em>Phys. Rev. Lett.</em> 136, 172501 (2026)</a>.</span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">2026-06</span>
+            <span><span class="news-tag paper">Paper</span>New paper published: "Direct observation of three-neutron emission and the search for the trineutron" — <a href="https://doi.org/10.1103/PhysRevResearch.8.L022003" target="_blank" rel="noopener"><em>Phys. Rev. Research</em> 8, L022003 (2026)</a>.</span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">2026-05</span>
+            <span><span class="news-tag paper">Paper</span>New paper published: "Development and application of position-sensitive double parallel-plate avalanche counter" — <a href="https://doi.org/10.1088/1748-0221/21/05/P05019" target="_blank" rel="noopener"><em>J. Instrum.</em> 21, P05019 (2026)</a>.</span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">2026-03</span>
+            <span><span class="news-tag talk">Talk</span>Invited talk at <em>HIAF Day One Experimental Workshop</em>, Huizhou, China — "Study of new magic number evolution and inversion island physics in neutron-rich nuclei at HIRIBL."</span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">2026-02</span>
+            <span><span class="news-tag talk">Talk</span>Invited talk at <em>FESDON2026</em>, Huizhou, China — "International development status of nuclear cluster structure research."</span>
+          </li>
+          <li class="news-item hidden">
+            <span class="news-date">2025-12</span>
+            <span><span class="news-tag talk">Talk</span>Talk at <em>PAC Meeting</em>, RIKEN, Japan — "Cluster structure of boron isotopes probed by (p,pX) cluster knockout reactions."</span>
+          </li>
+          <li class="news-item hidden">
+            <span class="news-date">2025-11</span>
+            <span><span class="news-tag talk">Talk</span>Talk at <em>Workshop on Nuclear Cluster Physics (WNCP2025)</em>, IMP, Huizhou — <a href="https://indico.itp.ac.cn/event/370/" target="_blank" rel="noopener">"Cluster structure of <sup>12</sup>Be ground state probed by alpha-knockout reaction."</a></span>
+          </li>
+          <li class="news-item hidden">
+            <span class="news-date">2025-04</span>
+            <span><span class="news-tag position">Position</span>Joined <strong>Fudan University</strong> (IMP) as Engineer, based in Shanghai, China.</span>
+          </li>
+        </ul>
+        <button class="news-more-btn" id="news-toggle" onclick="toggleNews()">Show more ▾</button>
+      </section>
 
       <!-- ABOUT ME -->
       <section id="about" class="section">
@@ -345,6 +397,17 @@
   </footer>
 
 <script>
+/* News show-more toggle */
+function toggleNews() {
+  const hidden = document.querySelectorAll('#news-list .news-item.hidden');
+  const btn = document.getElementById('news-toggle');
+  const expanded = btn.dataset.expanded === 'true';
+  hidden.forEach(el => el.style.display = expanded ? '' : 'grid');
+  btn.dataset.expanded = expanded ? 'false' : 'true';
+  btn.textContent = expanded ? 'Show more ▾' : 'Show less ▴';
+}
+
+/* Scroll: back-to-top + active nav */
 (() => {
   const btn = document.getElementById('back2top');
   const navLinks = document.querySelectorAll('.top-nav a');
