@@ -44,6 +44,7 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
 }
 .header-inner {
+  position: relative;
   min-height: 64px;
   display: flex;
   align-items: center;
@@ -60,7 +61,34 @@ a:hover { text-decoration: underline; }
 .brand .aff { color: var(--muted); font-size: 13px; }
 .top-nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14.5px; }
 .top-nav a { color: #39424b; }
-.top-nav a:hover { color: var(--teal-dark); }
+.top-nav a:hover,
+.top-nav a.active { color: var(--teal-dark); }
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------- Layout ---------- */
 .layout {
@@ -506,6 +534,110 @@ a:hover { text-decoration: underline; }
 }
 .news-more-btn:hover { text-decoration: underline; }
 
+/* Research project card teaser image */
+.pc-teaser {
+  width: 100%;
+  aspect-ratio: 240 / 100;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: var(--wash);
+  border: 1px solid var(--line);
+}
+.pc-teaser svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Selected Publications */
+.sel-pub-list { display: flex; flex-direction: column; gap: 20px; }
+.sel-pub-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.sel-pub-card:hover { box-shadow: 0 4px 18px rgba(31,36,41,0.1); }
+.sel-pub-img {
+  background: #fff;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.sel-pub-img svg { width: 100%; height: auto; display: block; }
+.sel-pub-body { padding: 16px 18px 16px 0; }
+.sel-pub-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.sel-pub-title { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.sel-pub-ref {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.sel-pub-journal {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 13.5px;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+.sel-pub-summary {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+.sel-pub-doi {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+.sel-pub-doi:hover { color: var(--fudan-red); text-decoration: underline; }
+
+/* Footer */
+.footer {
+  background: #232b30;
+  color: #cdd6db;
+  padding: 32px 0;
+  font-size: 13.5px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 24px 40px;
+  align-items: start;
+}
+.footer-name { font-weight: 700; font-size: 15px; color: #fff; margin-bottom: 3px; }
+.footer-role { color: #9fd6dc; font-size: 13px; margin-bottom: 3px; }
+.footer-inst { color: #8a9499; font-size: 12.5px; line-height: 1.5; }
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.footer-links a {
+  color: #9fd6dc;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-links a:hover { color: #fff; }
+.footer-copy {
+  color: #8a9499;
+  font-size: 12.5px;
+  line-height: 1.7;
+  text-align: right;
+}
+
 /* Back to top */
 #back2top {
   position: fixed; right: 26px; bottom: 40px;
@@ -534,16 +666,61 @@ a:hover { text-decoration: underline; }
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; gap: 22px; }
   .profile { position: static; }
-  .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 0; }
+  .header-inner { gap: 8px; padding: 10px 0; }
   .top-nav { gap: 12px 16px; }
+  .sel-pub-card { grid-template-columns: 180px 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-copy { text-align: left; }
 }
+
+/* Hamburger visible at ≤720px; nav becomes a dropdown */
 @media (max-width: 720px) {
   .research-grid { grid-template-columns: 1fr; }
   .card { padding: 24px 20px 28px; }
   .timeline li { grid-template-columns: 34px 1fr; gap: 11px; }
   .org-logo { width: 34px; height: 34px; }
-  .talks-list { grid-template-columns: 70px 1fr; }
-  .top-nav { display: none; }
+  .talks-list li { grid-template-columns: 70px 1fr; }
+
+  .nav-toggle { display: flex; }
+
+  /* Nav hides by default, slides down when .open */
+  .top-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 2px solid var(--fudan-red);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 12px 16px 16px;
+    gap: 0;
+    z-index: 100;
+  }
+  .top-nav.open { display: flex; }
+  .top-nav a {
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .top-nav a:last-child { border-bottom: 0; }
+
+  /* Selected pub cards go single column */
+  .sel-pub-card { grid-template-columns: 1fr; }
+  .sel-pub-img { border-right: none; border-bottom: 1px solid var(--line); padding: 14px; max-height: 130px; }
+  .sel-pub-body { padding: 14px; }
+
+  /* Footer stacks */
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+  .footer-copy { text-align: left; }
+}
+
+@media (max-width: 480px) {
+  .pc-teaser { aspect-ratio: 240 / 110; }
+  .sel-pub-img { max-height: 110px; }
+  .news-item { grid-template-columns: 72px 1fr; gap: 10px; }
+  .talks-list li { grid-template-columns: 64px 1fr; gap: 10px; }
 }
 
 /* ---------- Print / Save as PDF ---------- */

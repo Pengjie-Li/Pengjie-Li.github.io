@@ -15,13 +15,17 @@
         <span class="name">Pengjie Li</span>
         <span class="aff">Fudan University</span>
       </a>
-      <nav class="top-nav" aria-label="Navigation">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="Navigation">
         <a href="#news">News</a>
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#career">Career</a>
         <a href="#research">Research</a>
         <a href="#funds">Funds</a>
+        <a href="#selected-publications">Selected</a>
         <a href="#publications">Publications</a>
         <a href="#talks">Talks</a>
       </nav>
@@ -35,7 +39,7 @@
       <div class="p-body">
         <h1>Pengjie Li</h1>
         <div class="p-cn">李朋杰</div>
-        <div class="p-role">Engineer<br>Fudan University</div>
+        <div class="p-role">Experimental Nuclear Physicist<br><span style="font-weight:400;color:var(--muted)">Engineer · Fudan University</span></div>
         <div class="p-loc">
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
           Shanghai, China
@@ -183,18 +187,76 @@
         <h3 class="research-sub">Key Results</h3>
         <div class="research-grid">
           <a class="proj-card" href="projects/be10-molecular.html">
+            <div class="pc-teaser" aria-hidden="true">
+              <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="240" height="100" fill="#fdf4f5"/>
+                <circle cx="80" cy="50" r="22" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.8"/>
+                <text x="80" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1f2d">α</text>
+                <circle cx="160" cy="50" r="22" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.8"/>
+                <text x="160" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1f2d">α</text>
+                <line x1="102" y1="50" x2="138" y2="50" stroke="#2f8993" stroke-width="2" stroke-dasharray="4,3"/>
+                <circle cx="120" cy="26" r="8" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.2"/>
+                <text x="120" y="30" text-anchor="middle" font-size="8" fill="#236a73">2n</text>
+                <circle cx="120" cy="74" r="8" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.2"/>
+                <text x="120" y="78" text-anchor="middle" font-size="8" fill="#236a73">2n</text>
+                <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#66707b">¹⁰Be = 2α⊗2n molecule</text>
+              </svg>
+            </div>
             <div class="pc-tagrow"><span class="pc-tag">PRL 2023</span></div>
             <h3>Molecular structure of <sup>10</sup>Be ground state</h3>
-            <p class="pc-intro">First direct evidence that nuclei “clusterize” in their ground state — a molecule-like 2α+2n structure revealed by <sup>10</sup>Be(p,pα)<sup>6</sup>He quasi-free knockout.</p>
+            <p class="pc-intro">First direct evidence that nuclei "clusterize" in their ground state — a molecule-like 2α+2n structure revealed by <sup>10</sup>Be(p,pα)<sup>6</sup>He quasi-free knockout.</p>
             <span class="pc-more">View project</span>
           </a>
           <a class="proj-card" href="projects/ca-shell-evolution.html">
+            <div class="pc-teaser" aria-hidden="true">
+              <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="240" height="100" fill="#f5f8fa"/>
+                <g stroke="#2f8993" stroke-width="1.8" fill="none">
+                  <line x1="40" y1="82" x2="100" y2="82"/>
+                  <line x1="40" y1="63" x2="100" y2="63"/>
+                  <line x1="40" y1="44" x2="100" y2="44"/>
+                  <line x1="40" y1="26" x2="100" y2="26"/>
+                  <line x1="140" y1="82" x2="200" y2="82"/>
+                  <line x1="140" y1="68" x2="200" y2="68"/>
+                  <line x1="140" y1="48" x2="200" y2="48"/>
+                  <line x1="140" y1="22" x2="200" y2="22"/>
+                </g>
+                <text x="22" y="86" font-size="7.5" fill="#66707b">0f₇/₂</text>
+                <text x="22" y="67" font-size="7.5" fill="#66707b">1p₃/₂</text>
+                <text x="22" y="48" font-size="7.5" fill="#66707b">1p₁/₂</text>
+                <text x="22" y="30" font-size="7.5" fill="#66707b">0f₅/₂</text>
+                <text x="70"  y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#8b1f2d">⁴⁰Ca</text>
+                <text x="170" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#8b1f2d">⁵⁶Ca</text>
+                <defs><marker id="a1" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5Z" fill="#8b1f2d"/></marker></defs>
+                <line x1="118" y1="44" x2="138" y2="24" stroke="#8b1f2d" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#a1)"/>
+                <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#66707b">tensor-force shell evolution</text>
+              </svg>
+            </div>
             <div class="pc-tagrow"><span class="pc-tag">PLB 2024</span></div>
             <h3>Shell evolution in neutron-rich calcium</h3>
             <p class="pc-intro">First spectroscopy of the deeply bound neutron 0f<sub>7/2</sub> orbital in <sup>54,56</sup>Ca, exposing the tensor force's role in shell evolution.</p>
             <span class="pc-more">View project</span>
           </a>
           <a class="proj-card" href="projects/multi-neutron.html">
+            <div class="pc-teaser" aria-hidden="true">
+              <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="240" height="100" fill="#f5f8fa"/>
+                <!-- 4 neutron blobs in a cluster -->
+                <circle cx="100" cy="44" r="13" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.5"/>
+                <text x="100" y="48" text-anchor="middle" font-size="9" fill="#236a73">n</text>
+                <circle cx="126" cy="44" r="13" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.5"/>
+                <text x="126" y="48" text-anchor="middle" font-size="9" fill="#236a73">n</text>
+                <circle cx="100" cy="68" r="13" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.5"/>
+                <text x="100" y="72" text-anchor="middle" font-size="9" fill="#236a73">n</text>
+                <circle cx="126" cy="68" r="13" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.5"/>
+                <text x="126" y="72" text-anchor="middle" font-size="9" fill="#236a73">n</text>
+                <!-- brace label -->
+                <text x="55" y="60" font-size="26" fill="#8b1f2d" font-weight="700">{</text>
+                <text x="148" y="60" font-size="26" fill="#8b1f2d" font-weight="700">}</text>
+                <text x="120" y="14" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8b1f2d">4n / 6n system</text>
+                <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#66707b">Nature 2022 · EPJ 2025</text>
+              </svg>
+            </div>
             <div class="pc-tagrow"><span class="pc-tag">Nature 2022</span><span class="pc-tag">EPJ 2025</span></div>
             <h3>Multi-neutron correlations (4n &amp; 6n)</h3>
             <p class="pc-intro">First clear free-4n signal and 6n missing-mass spectrum via α-knockout — new benchmarks for nuclear-force theories.</p>
@@ -205,18 +267,84 @@
         <h3 class="research-sub">Current &amp; Future</h3>
         <div class="research-grid">
           <a class="proj-card" href="projects/leng-ribll1.html">
+            <div class="pc-teaser" aria-hidden="true">
+              <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="240" height="100" fill="#f5f8f9"/>
+                <!-- Schematic beam + target + detector -->
+                <!-- Incoming beam arrow -->
+                <defs><marker id="b1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6Z" fill="#8b1f2d"/></marker></defs>
+                <line x1="20" y1="50" x2="88" y2="50" stroke="#8b1f2d" stroke-width="2.5" marker-end="url(#b1)"/>
+                <text x="44" y="44" text-anchor="middle" font-size="8.5" fill="#8b1f2d" font-weight="600">¹⁶C beam</text>
+                <!-- Gas target cylinder -->
+                <ellipse cx="105" cy="50" rx="14" ry="24" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.5"/>
+                <text x="105" y="53" text-anchor="middle" font-size="7.5" fill="#8b1f2d">⁴He</text>
+                <text x="105" y="62" text-anchor="middle" font-size="7" fill="#8b1f2d">target</text>
+                <!-- Two outgoing arrows -->
+                <line x1="119" y1="38" x2="170" y2="22" stroke="#2f8993" stroke-width="1.8" marker-end="url(#b1)"/>
+                <line x1="119" y1="62" x2="170" y2="78" stroke="#2f8993" stroke-width="1.8" marker-end="url(#b1)"/>
+                <text x="176" y="20" font-size="8" fill="#236a73">α</text>
+                <text x="176" y="76" font-size="8" fill="#236a73">α</text>
+                <!-- Detector array (rectangle) -->
+                <rect x="188" y="10" width="12" height="80" rx="3" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.2"/>
+                <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#66707b">RIBLL1 · LENG · (α,2α) knockout</text>
+              </svg>
+            </div>
             <div class="pc-tagrow"><span class="pc-tag">RIBLL1</span><span class="pc-tag">LENG</span><span class="pc-tag">Beam 2025</span></div>
             <h3>(α,2α) quasi-free knockout at RIBLL1 (LENG)</h3>
             <p class="pc-intro">Leading <sup>16</sup>C/<sup>18</sup>O(α,2α) with a self-developed <sup>4</sup>He gas target; founding the LENG low-temperature-target collaboration.</p>
             <span class="pc-more">View project</span>
           </a>
           <a class="proj-card" href="projects/hiaf-hiribl.html">
+            <div class="pc-teaser" aria-hidden="true">
+              <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="240" height="100" fill="#f5f8f9"/>
+                <!-- Telescope array schematic (stacked detector layers) -->
+                <g fill="#eaf4f5" stroke="#2f8993" stroke-width="1.4">
+                  <rect x="150" y="20" width="8" height="60" rx="2"/>
+                  <rect x="162" y="20" width="8" height="60" rx="2"/>
+                  <rect x="174" y="20" width="8" height="60" rx="2"/>
+                  <rect x="186" y="20" width="8" height="60" rx="2"/>
+                  <rect x="198" y="20" width="8" height="60" rx="2"/>
+                </g>
+                <text x="178" y="92" text-anchor="middle" font-size="7.5" fill="#66707b">telescope array</text>
+                <!-- Proton target cylinder -->
+                <ellipse cx="110" cy="50" rx="12" ry="20" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.4"/>
+                <text x="110" y="48" text-anchor="middle" font-size="7.5" fill="#8b1f2d">p</text>
+                <text x="110" y="58" text-anchor="middle" font-size="6.5" fill="#8b1f2d">target</text>
+                <!-- Beam -->
+                <defs><marker id="b2" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5Z" fill="#8b1f2d"/></marker></defs>
+                <line x1="20" y1="50" x2="96" y2="50" stroke="#8b1f2d" stroke-width="2.2" marker-end="url(#b2)"/>
+                <text x="56" y="44" text-anchor="middle" font-size="8" fill="#8b1f2d" font-weight="600">RI beam</text>
+                <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#66707b">HIAF-HIRIBL · (p,pX) · future</text>
+              </svg>
+            </div>
             <div class="pc-tagrow"><span class="pc-tag">HIAF-HIRIBL</span><span class="pc-tag">Future</span></div>
             <h3>(p,pX) cluster knockout at HIAF-HIRIBL</h3>
             <p class="pc-intro">Building a next-generation telescope array for (p,pα)/(p,pt)/(p,p<sup>3</sup>He) knockout at the new Huizhou beam line.</p>
             <span class="pc-more">View project</span>
           </a>
           <a class="proj-card" href="projects/boron-ribf.html">
+            <div class="pc-teaser" aria-hidden="true">
+              <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="240" height="100" fill="#f5f8f9"/>
+                <!-- Boron isotope chain with cluster symbols -->
+                <defs><marker id="b3" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5Z" fill="#2f8993"/></marker></defs>
+                <!-- Horizontal evolution axis -->
+                <line x1="30" y1="60" x2="210" y2="60" stroke="#d0d8de" stroke-width="1.5" marker-end="url(#b3)"/>
+                <text x="220" y="64" font-size="8" fill="#66707b">N</text>
+                <!-- B isotopes as circles -->
+                <circle cx="60"  cy="60" r="14" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.5"/>
+                <text x="60"  y="57" text-anchor="middle" font-size="8" font-weight="700" fill="#8b1f2d">¹¹B</text>
+                <text x="60"  y="68" text-anchor="middle" font-size="7" fill="#8b1f2d">α+t</text>
+                <circle cx="120" cy="60" r="14" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.5"/>
+                <text x="120" y="57" text-anchor="middle" font-size="8" font-weight="700" fill="#8b1f2d">¹³B</text>
+                <text x="120" y="68" text-anchor="middle" font-size="7" fill="#8b1f2d">α+⁶He</text>
+                <circle cx="180" cy="60" r="14" fill="#fbeaec" stroke="#8b1f2d" stroke-width="1.5"/>
+                <text x="180" y="57" text-anchor="middle" font-size="8" font-weight="700" fill="#8b1f2d">¹⁵B</text>
+                <text x="180" y="68" text-anchor="middle" font-size="7" fill="#8b1f2d">α+⁸He</text>
+                <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#66707b">RIKEN-RIBF · ONOKORO · 200 MeV/u</text>
+              </svg>
+            </div>
             <div class="pc-tagrow"><span class="pc-tag">RIKEN-RIBF</span><span class="pc-tag">ONOKORO</span></div>
             <h3>Boron cluster-structure evolution at RIKEN-RIBF</h3>
             <p class="pc-intro">Probing cluster evolution in boron isotopes — including non-α clusters (t, <sup>6</sup>He) — via <sup>11,13,15</sup>B(p,pX) knockout at 200 MeV/u.</p>
@@ -245,6 +373,101 @@
             <div class="fund-cn">中国博士后科学基金国际交流计划引进项目</div>
           </li>
         </ul>
+      </section>
+
+      <!-- SELECTED PUBLICATIONS -->
+      <section id="selected-publications" class="section">
+        <h2>Selected Publications</h2>
+        <div class="sel-pub-list">
+
+          <!-- PRL 2023 -->
+          <div class="sel-pub-card">
+            <div class="sel-pub-img" aria-hidden="true">
+              <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="10Be molecular cluster diagram">
+                <!-- Background -->
+                <rect width="260" height="140" fill="#f5f8f9"/>
+                <!-- Two alpha clusters (circles) -->
+                <circle cx="90" cy="70" r="28" fill="#fbeaec" stroke="#8b1f2d" stroke-width="2"/>
+                <text x="90" y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#8b1f2d">α</text>
+                <text x="90" y="80" text-anchor="middle" font-size="9" fill="#8b1f2d">cluster</text>
+                <circle cx="170" cy="70" r="28" fill="#fbeaec" stroke="#8b1f2d" stroke-width="2"/>
+                <text x="170" y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#8b1f2d">α</text>
+                <text x="170" y="80" text-anchor="middle" font-size="9" fill="#8b1f2d">cluster</text>
+                <!-- Bond line -->
+                <line x1="118" y1="70" x2="142" y2="70" stroke="#2f8993" stroke-width="2.5" stroke-dasharray="5,3"/>
+                <!-- Two valence neutrons (small circles above/below) -->
+                <circle cx="130" cy="38" r="10" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.5"/>
+                <text x="130" y="42" text-anchor="middle" font-size="10" fill="#236a73">2n</text>
+                <circle cx="130" cy="102" r="10" fill="#eaf4f5" stroke="#2f8993" stroke-width="1.5"/>
+                <text x="130" y="106" text-anchor="middle" font-size="10" fill="#236a73">2n</text>
+                <!-- Label -->
+                <text x="130" y="130" text-anchor="middle" font-size="10" fill="#66707b">¹⁰Be molecular structure</text>
+              </svg>
+            </div>
+            <div class="sel-pub-body">
+              <div class="sel-pub-tags">
+                <span class="pc-tag">PRL 2023</span>
+                <span class="badge featured">highlight</span>
+                <span class="badge first">1st author</span>
+              </div>
+              <div class="sel-pub-title"><span class="me">P.J. Li</span>, D. Beaumel, J. Lee, M. Assié, S. Chen, S. Franchoo, J. Gibelin et al.</div>
+              <div class="sel-pub-ref">"Validation of the <sup>10</sup>Be ground state molecular structure using <sup>10</sup>Be(p,pα)<sup>6</sup>He triple differential reaction cross-section measurements"</div>
+              <div class="sel-pub-journal"><em>Phys. Rev. Lett.</em> 131, 212501 (2023)</div>
+              <p class="sel-pub-summary">First direct proof that the <sup>10</sup>Be ground state has a 2α+2n molecular structure. Triple-differential quasi-free knockout cross-sections were measured in inverse kinematics at RIKEN-RIBF, providing the decisive experimental test of nuclear molecule formation in the ground state.</p>
+              <a class="sel-pub-doi" href="https://doi.org/10.1103/PhysRevLett.131.212501" target="_blank" rel="noopener">DOI: 10.1103/PhysRevLett.131.212501 →</a>
+            </div>
+          </div>
+
+          <!-- PLB 2024 -->
+          <div class="sel-pub-card">
+            <div class="sel-pub-img" aria-hidden="true">
+              <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shell evolution diagram for calcium isotopes">
+                <!-- Background -->
+                <rect width="260" height="140" fill="#f5f8f9"/>
+                <!-- Shell levels (horizontal bars) -->
+                <g stroke="#2f8993" stroke-width="2" fill="none">
+                  <line x1="50" y1="110" x2="110" y2="110"/>
+                  <line x1="50" y1="85"  x2="110" y2="85"/>
+                  <line x1="50" y1="60"  x2="110" y2="60"/>
+                  <line x1="50" y1="38"  x2="110" y2="38"/>
+                  <!-- Shift for 54Ca / 56Ca -->
+                  <line x1="150" y1="110" x2="210" y2="110"/>
+                  <line x1="150" y1="90"  x2="210" y2="90"/>
+                  <line x1="150" y1="60"  x2="210" y2="60"/>
+                  <line x1="150" y1="30"  x2="210" y2="30"/>
+                </g>
+                <!-- Orbital labels left -->
+                <text x="28" y="114" font-size="9" fill="#66707b">0f₇/₂</text>
+                <text x="28" y="89"  font-size="9" fill="#66707b">1p₃/₂</text>
+                <text x="28" y="64"  font-size="9" fill="#66707b">1p₁/₂</text>
+                <text x="28" y="42"  font-size="9" fill="#66707b">0f₅/₂</text>
+                <!-- Column headers -->
+                <text x="80" y="22"  text-anchor="middle" font-size="9" font-weight="700" fill="#8b1f2d">⁴⁰Ca</text>
+                <text x="180" y="22" text-anchor="middle" font-size="9" font-weight="700" fill="#8b1f2d">⁵⁴Ca</text>
+                <!-- Arrow showing tensor-force shift -->
+                <defs>
+                  <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <path d="M0,0 L6,3 L0,6 Z" fill="#8b1f2d"/>
+                  </marker>
+                </defs>
+                <line x1="130" y1="60" x2="148" y2="32" stroke="#8b1f2d" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr)"/>
+                <text x="130" y="125" text-anchor="middle" font-size="9" fill="#66707b">tensor-force shell evolution</text>
+              </svg>
+            </div>
+            <div class="sel-pub-body">
+              <div class="sel-pub-tags">
+                <span class="pc-tag">PLB 2024</span>
+                <span class="badge first">1st author</span>
+              </div>
+              <div class="sel-pub-title"><span class="me">P.J. Li</span>, J. Lee, P. Doornenbal, S. Chen, S. Wang, A. Obertelli, Y. Chazono et al.</div>
+              <div class="sel-pub-ref">"Spectroscopy of deeply bound orbitals in neutron-rich Ca isotopes"</div>
+              <div class="sel-pub-journal"><em>Phys. Lett. B</em> 855, 138828 (2024)</div>
+              <p class="sel-pub-summary">First spectroscopy of the deeply bound 0f<sub>7/2</sub> neutron orbital in <sup>54,56</sup>Ca via quasi-free (p,2p) knockout at RIKEN-RIBF. The measured spectroscopic factors reveal the tensor-force-driven quenching of the N=28 shell, providing key constraints on nuclear shell evolution far from stability.</p>
+              <a class="sel-pub-doi" href="https://doi.org/10.1016/j.physletb.2024.138828" target="_blank" rel="noopener">DOI: 10.1016/j.physletb.2024.138828 →</a>
+            </div>
+          </div>
+
+        </div>
       </section>
 
             <!-- PUBLICATIONS -->
@@ -390,9 +613,25 @@
   <button id="back2top" aria-label="Back to top">↑</button>
 
   <footer class="footer">
-    <div class="wrap">
-      <p>© Fudan University · Pengjie Li (李朋杰)</p>
-      <p>Last updated: July 2026 · <a href="https://github.com/Pengjie-Li" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0000-0001-6542-4697" target="_blank" rel="noopener">ORCID</a></p>
+    <div class="wrap footer-inner">
+      <div class="footer-col">
+        <div class="footer-name">Pengjie Li (李朋杰)</div>
+        <div class="footer-role">Experimental Nuclear Physicist</div>
+        <div class="footer-inst">Institute of Modern Physics · Fudan University · Shanghai, China</div>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="mailto:lipengjie@fudan.edu.cn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+          lipengjie@fudan.edu.cn
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&user=wFrSqu8AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://orcid.org/0000-0001-6542-4697" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://github.com/Pengjie-Li" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-col footer-copy">
+        <div>© 2026 Pengjie Li</div>
+        <div>Last updated: July 2026</div>
+      </div>
     </div>
   </footer>
 
@@ -406,6 +645,28 @@ function toggleNews() {
   btn.dataset.expanded = expanded ? 'false' : 'true';
   btn.textContent = expanded ? 'Show more ▾' : 'Show less ▴';
 }
+
+/* Mobile nav hamburger */
+(() => {
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('top-nav');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  /* Close on any nav link click (smooth-scroll to section) */
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
 
 /* Scroll: back-to-top + active nav */
 (() => {
